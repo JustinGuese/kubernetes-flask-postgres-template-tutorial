@@ -1,0 +1,23 @@
+version: "3"
+services:
+  flaskserver: 
+    image: guestros/carflask:latest
+    build: ./flask-postgresql-app-master/
+    environment: 
+      - DBUSER=postgres
+      - DBPASS=testi123
+      - DBHOST=postgresflask
+      - DBNAME=cardb
+    ports:
+      - 5000:5000
+    depends_on:
+      - postgresflask
+  postgresflask:
+    image: postgres:latest
+    environment:
+      - POSTGRES_PASSWORD=testi123
+      - POSTGRES_DB=cardb
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+volumes:
+  postgresdata:
