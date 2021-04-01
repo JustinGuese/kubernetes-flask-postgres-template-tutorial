@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/JustinGuese/kubernetes-flask-postgres-template-tutorial.svg?branch=master)](https://travis-ci.com/JustinGuese/kubernetes-flask-postgres-template-tutorial)
+
 # travis tut
 
 https://medium.com/@drew.buckman/use-travis-ci-to-automate-the-deployment-of-a-python-gunicorn-app-to-kubernetes-2a42cb9d2e88
