@@ -7,3 +7,21 @@ https://medium.com/@drew.buckman/use-travis-ci-to-automate-the-deployment-of-a-p
 - getting a kubernetes token
 
 aws eks get-token --region eu-central-1 --cluster-name testcluster
+
+# aws eks create cluster
+
+https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html
+
+
+aws ec2 create-key-pair --region eu-central-1 --key-name keyname
+eksctl create cluster \
+--name bwtest \
+--region eu-central-1 \
+--with-oidc \
+--spot \
+--instance-types=t3a.micro \
+--nodes-min=1 \
+--nodes-max=3 \
+--ssh-access \
+--ssh-public-key keyname \
+--managed
