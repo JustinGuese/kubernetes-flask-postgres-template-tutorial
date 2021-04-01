@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: carflask
-          image: guestros/carflask:latest
+          # VERSION will be replaced by sed in travis 
+          image: guestros/carflask:VERSION
           ports:
             - containerPort: 5000
           env:
