@@ -20,8 +20,14 @@ eksctl create cluster \
 --with-oidc \
 --spot \
 --instance-types=t3a.micro \
+--version=1.19 \
 --nodes-min=1 \
 --nodes-max=3 \
 --ssh-access \
 --ssh-public-key keyname \
 --managed
+
+
+### deleting it
+
+eksctl delete cluster --name bwtest --region eu-central-1

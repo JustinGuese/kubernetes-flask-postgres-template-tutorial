@@ -11,6 +11,13 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
   - docker build -t guestros/carflask:$TRAVIS_BUILD_NUMBER flask-postgresql-app-master
   - docker push guestros/carflask
+install:
+  # install helm
+  - curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh
+  - chmod 700 get_helm.sh
+  - ./get_helm.sh
+  - source ~/.bashrc
+  - helm init --client-only
 script:
 - bash scripts/updateKube.sh
 deploy:
