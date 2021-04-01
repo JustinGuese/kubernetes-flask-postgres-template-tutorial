@@ -7,7 +7,7 @@ https://medium.com/@drew.buckman/use-travis-ci-to-automate-the-deployment-of-a-p
 ## getting a kubernetes token
 
 aws eks get-token --region eu-central-1 --cluster-name testcluster
-
+.
 # aws eks create cluster
 
 https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html
