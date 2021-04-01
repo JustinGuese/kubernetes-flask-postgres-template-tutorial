@@ -1,5 +1,7 @@
 #!/bin/bash
-echo "$KUBERNETES_CLUSTER_CERTIFICATE" | base64 --decode > cert.crt
+echo "$KUBERNETES_CLUSTER_CERTIFICATE" > cert.crt
+# check install for debug
+/usr/local/bin/kubectl cluster-info
 # install nginx ingress for aws
 /usr/local/bin/kubectl \
   --kubeconfig=/dev/null \

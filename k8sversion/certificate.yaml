@@ -10,10 +10,10 @@ spec:
     kind: ClusterIssuer
   commonName: bwk8s-datafortress-cloud
   dnsNames:
-    - bwk8s-datafortress-cloud
+    - bwk8s.datafortress.cloud
   acme:
     config:
       - http01:
           ingressClass: nginx
         domains:
-          - bwk8s-datafortress-cloud
+          - bwk8s.datafortress.cloud
