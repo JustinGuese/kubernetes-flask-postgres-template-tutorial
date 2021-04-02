@@ -1,13 +1,12 @@
-apiVersion: cert-manager.io/v1
+apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
-  name: schutzmaskekaufen-at-tls
+  name: schutzmaskekaufen-at
+  namespace: default
 spec:
-  secretName: schutzmaskekaufen-at
+  secretName: schutzmaskekaufen-at-tls
   issuerRef:
-    name: letsencrypt-prod
-    kind: ClusterIssuer
+    name: letsencrypt-staging
   commonName: schutzmaskekaufen.at
   dnsNames:
-    - schutzmaskekaufen.at
-    # - www.schutzmaskekaufen.at
+  - schutzmaskekaufen.at
