@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: schutzmaskekaufen-at-tls
+spec:
+  secretName: schutzmaskekaufen-at
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: schutzmaskekaufen.at
+  dnsNames:
+    - schutzmaskekaufen.at
+    # - www.schutzmaskekaufen.at
