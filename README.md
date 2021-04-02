@@ -1,5 +1,17 @@
 [![Build Status](https://travis-ci.com/JustinGuese/kubernetes-flask-postgres-template-tutorial.svg?branch=master)](https://travis-ci.com/JustinGuese/kubernetes-flask-postgres-template-tutorial)
 
+# creating a secret
+
+kubectl create secret generic pgpassword --from-literal='PGPASSWORD='
+
+# switch context
+
+kubectl config get-contexts
+
+kubectl config use-context CONTEXT_NAME
+
+
+
 # travis tut
 
 https://medium.com/@drew.buckman/use-travis-ci-to-automate-the-deployment-of-a-python-gunicorn-app-to-kubernetes-2a42cb9d2e88
@@ -19,7 +31,7 @@ eksctl create cluster \
 --region eu-central-1 \
 --with-oidc \
 --spot \
---instance-types=t3a.micro \
+--instance-types=t3a.medium \
 --version=1.19 \
 --nodes-min=1 \
 --nodes-max=3 \
@@ -30,4 +42,4 @@ eksctl create cluster \
 
 ### deleting it
 
-eksctl delete cluster --name bwtest --region eu-central-1
+eksctl delete cluster --region eu-central-1 --name bwtest2
